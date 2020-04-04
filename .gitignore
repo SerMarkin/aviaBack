@@ -1,0 +1,52 @@
+*.egg-info/
+node_modules
+.idea/
+__pycache__/
+src/settings/local.py
+log
+config/dev/.env
+docker/.env
+Будет удалено logs/
+Будет удалено static/admin/
+Будет удалено static/drf-yasg/
+Будет удалено static/flags/
+Будет удалено static/jet/
+Будет удалено static/range_filter/
+Будет удалено static/rest_framework/
+/config/.contract_zcoin
+*.mo
+*.dump
+venv
+env
+propsfile
+Будет удалено build/
+Будет удалено config/supervisord/supervisord.pid
+Будет удалено dist/
+Будет удалено media/
+Будет удалено propsfile
+Будет удалено static/facebook/
+Будет удалено static/fonts/
+Будет удалено static/nested_admin/
+media/
+logs/
+src/utils/field.json
+src/apps/zcoin/build/
+build
+.env
+docker/ganachedb/
+.pytest_cache/
+.coverage
+htmlcov
+static
+media
+*.tgz
+*.local.*
+.vagrant
+letsencrypt
+
+pip-wheel-metadata
+celerybeat-schedule
+*.pid
+win-docker/
+
+*.sqlite3
