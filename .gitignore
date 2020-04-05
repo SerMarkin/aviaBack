@@ -51,3 +51,6 @@ celerybeat-schedule
 win-docker/
 
 *.sqlite3
+
+public/
+polls/migrations/
