@@ -26,7 +26,7 @@ ALLOWED_HOSTS = ['*']
 SECRET_KEY = 'cul6@(l(siy$%7g5t3t-gh+4vd%1t##chie%z_0!%rx##-n+ck'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+
 CORS_ORIGIN_ALLOW_ALL = True
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -122,14 +132,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 if (DEBUG):
-    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 else:
-    STATIC_URL = '/var/www/django/aviaBack/public/'
+    STATIC_ROOT = '/var/www/django/aviaBack/public/'
 
-STATIC_ROOT = '/var/www/django/aviaBack/static/'
+STATIC_URL = '/static/'
 FIRST_DAY_OF_WEEK = 1
 
 if (DEBUG):
     MEDIA_ROOT = os.path.join(BASE_DIR, 'public/')
 else:
     MEDIA_ROOT = '/var/www/django/aviaBack/public/'
+
+MEDIA_URL = '/public/'
