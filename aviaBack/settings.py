@@ -132,9 +132,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 if (DEBUG):
-    STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 else:
-    STATIC_ROOT = '/var/www/django/aviaBack/public/'
+    STATIC_ROOT = '/var/www/django/aviaBack/static/'
 
 STATIC_URL = '/static/'
 FIRST_DAY_OF_WEEK = 1
