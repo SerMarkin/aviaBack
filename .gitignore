@@ -2,7 +2,7 @@
 node_modules
 .idea/
 __pycache__/
-*/__pycache__/
+aviaBack/__pycache__/
 src/settings/local.py
 log
 config/dev/.env

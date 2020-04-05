@@ -121,10 +121,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+if (DEBUG):
+    STATIC_URL = '/static/'
+else:
+    STATIC_URL = '/var/www/django/aviaBack/public/'
+
 STATIC_ROOT = '/var/www/django/aviaBack/static/'
 FIRST_DAY_OF_WEEK = 1
 
-MEDIA_ROOT = '/var/www/django/aviaBack/public/'
-
-MEDIA_URL = '/public/'
+if (DEBUG):
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'public/')
+else:
+    MEDIA_ROOT = '/var/www/django/aviaBack/public/'
