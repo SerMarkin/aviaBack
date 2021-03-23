@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from django.conf.urls import url, include
-from rest_framework import routers, serializers, viewsets
+from rest_framework import routers, serializers, generics
 from polls.models import Book
 
 
@@ -18,11 +18,12 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['title', 'description', 'logo','src']
 
 # ViewSets define the view behavior.
-class BookViewSet(viewsets.ModelViewSet):
+class BookPostsReadView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    model = serializer_class.Meta.model
 
-router.register(r'books', BookViewSet)
+
 
 def index(request):
     return HttpResponse("Its work")

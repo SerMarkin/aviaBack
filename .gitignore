@@ -54,3 +54,5 @@ win-docker/
 
 public/
 polls/migrations/
+target/
+.vscode/
