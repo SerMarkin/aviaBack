@@ -21,5 +21,9 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('', views.index, name='index'),
     url(r'^', include(views.router.urls)),
-    path('books', views.BookPostsReadView.as_view(), name='index'),
+    path('books', views.BookPostsReadView.as_view(), name='books'),
+    path('studydays', views.StudyDaysReadView.as_view(), name='studydays'),
+    path('yearstudy', views.YearStudyReadView.as_view(), name='yearstudy'),
+    path('groups', views.SpecialGroupNameReadView.as_view(), name='groups'),
+    path('import', views.index)
 ]
