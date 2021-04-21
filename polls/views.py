@@ -94,6 +94,6 @@ class StudyDaysReadView(generics.ListAPIView):
 
 def index(request):
     get_and_parse_file(request.FILES['файл'])
-    return redirect(to="/admin/polls/lesson/")
+    return redirect(to="/admin/polls/studyday/")
 
 
