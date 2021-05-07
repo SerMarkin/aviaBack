@@ -56,3 +56,4 @@ public/
 polls/migrations/
 target/
 .vscode/
+.python-version

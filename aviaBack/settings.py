@@ -23,10 +23,11 @@ ALLOWED_HOSTS = ['*']
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'cul6@(l(siy$%7g5t3t-gh+4vd%1t##chie%z_0!%rx##-n+ck'
+SECRET_KEY = os.getenv("SECRET_KEY","cul6@(l(siy$%7g5t3t-gh+4vd%1t##chie%z_0!%rx##-n+ck")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG","TRUE") == "TRUE"
+
 
 
 # Application definition
@@ -130,17 +131,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-if (DEBUG):
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-else:
-    STATIC_ROOT = '/var/www/django/aviaBack/static/'
+STATIC_ROOT = os.getenv("STATIC_ROOT", os.path.join(BASE_DIR, 'static/'))
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", os.path.join(BASE_DIR, 'public/'))
 
 STATIC_URL = '/static/'
 FIRST_DAY_OF_WEEK = 1
 
-if (DEBUG):
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'public/')
-else:
-    MEDIA_ROOT = '/var/www/django/aviaBack/public/'
 
 MEDIA_URL = '/public/'
