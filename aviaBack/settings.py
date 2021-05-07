@@ -138,4 +138,4 @@ STATIC_URL = '/static/'
 FIRST_DAY_OF_WEEK = 1
 
 
-MEDIA_URL = '/public/'
+MEDIA_URL = '/media/'
