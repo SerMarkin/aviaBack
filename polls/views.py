@@ -19,9 +19,19 @@ class DisciplineSerializer(serializers.HyperlinkedModelSerializer):
 
 class BookSerializer(serializers.HyperlinkedModelSerializer):
     disciplines = DisciplineSerializer(many=True)
+    logo_url = serializers.SerializerMethodField()
+    src_url = serializers.SerializerMethodField()
     class Meta:
         model = Book
-        fields = ['title', 'description', 'logo','src','author','disciplines']
+        fields = ['title', 'description', 'logo_url','src_url','author','disciplines']
+
+    def get_logo_url(self,book):
+        logo_url = book.logo.url
+        return logo_url
+
+    def get_src_url(self,book):
+        src_url = book.src.url
+        return src_url
 
 # ViewSets define the view behavior.
 class BookPostsReadView(generics.ListAPIView):

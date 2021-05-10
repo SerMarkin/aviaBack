@@ -36,6 +36,7 @@ class Book(BaseModel):
     description = models.TextField(null=True,verbose_name="Описание")
     logo = models.ImageField(verbose_name="Обложка",upload_to="Books/logo")
     src = models.FileField(verbose_name="Файл",upload_to="Books/file")
+    
     def __str__(self):
         return self.title
     
